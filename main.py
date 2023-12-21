@@ -1,7 +1,7 @@
 # main.py
 
     # TERMINAL:
-# 1-)  cd "...\Case__AdCreative.ai"
+# 1-)  cd "...\Case__Advertisement_Machine-Learning"
 # 2-)  python -m venv venv
 # 3-)  Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 # 4-)  .\venv\Scripts\Activate

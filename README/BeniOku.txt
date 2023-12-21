@@ -1,0 +1,88 @@
+
+	# TASK 1: Görüntü Üretimi
+
+(Bu aşamada, Google Colab ile çalıştım)
+Python Kodu: 'adcreative_ai_task_1.py'
+
+## Amaç:
+- Bu görevde, verilen bir logoyu içeren ve belirli bir sahneyi tasvir eden yeni bir görüntü üretmek amaçlanmıştır. 
+
+## Yöntem:
+- Stable Diffusion Img2Img modeli kullanılarak, sabah güneşi altında bir masada duran, üzerinde özgün bir logo bulunan tek kullanımlık
+kahve fincanının bulunduğu huzurlu bir bahçe sahnesi yaratılmıştır.
+
+## Teknolojiler:
++ JAX
++ NumPy
++ Flax
++ PIL (Python Imaging Library)
++ Diffusers kütüphanesi
+
+## Nasıl Çalışır:
+1. RNG anahtarı oluşturulur.
+2. İlk görsel yüklenir ve piksel yeniden boyutlandırılır.
+3. Belirli bir metin promptu kullanılarak modelden yeni bir görsel üretilmesi istenir.
+4. Üretilen görsel gösterilir.
+
+## Sonuç:
+- Elde edilen sonuç, özgün tasarım detaylarını ve renkleri içeren logo ile süslenmiş bir kahve fincanının görselidir.
+- Görüntü: Task-1__Output-Image.png
+
+
+
+	# TASK 2: Dinamik Reklam Şablonu Oluşturma
+
+(Bu aşamada, Google Colab ile çalıştım)
+Python Kodu: 'adcreative_ai_task_2.py'
+
+## Amaç:
+- Görev 2, Görev 1'de oluşturulan görüntüyü kullanarak bir reklam şablonu geliştirmeyi amaçlamaktadır.
+
+## Yöntem:
+- Pillow kütüphanesi kullanılarak logo ve görüntü düzenlenmiş, ardından özelleştirilmiş metin ve çağrı-aksiyon butonu eklenmiştir.	
+
+## Adımlar:
+1. Beyaz bir arka plan oluşturulur.
+2. Logo ve Görev 1'den elde edilen görüntü arka plana eklenir.
+3. Playfair Display SemiBold yazı tipi kullanılarak punchline ve buton metni yazılır.
+4. Son reklam şablonu kaydedilir ve gösterilir.
+
+## Sonuç:
+- Sonuç, şirketin logosu, özelleştirilmiş bir punchline ve buton içeren dinamik bir reklam şablonudur.
+- Görüntü: Task-2__Output-Image.png
+
+
+
+	# TASK 3: API Geliştirme
+
+(Bu aşamada, Visual Studio Code ile çalıştım)
+Python Kodu: 'main.py'
+
+## Amaç:
+- Görev 3, kullanıcıların yüklediği görselleri kullanarak kişiselleştirilmiş reklam görselleri oluşturabilecekleri bir API geliştirmektir.
+
+## Yöntem:
+- FastAPI kullanılarak hızlı ve etkili bir şekilde bir API geliştirilmiştir.
+
+## Adımlar:
+1. FastAPI ile API uygulaması oluşturulur.
+2. Endpoint'ler ve parametreler tanımlanır.
+3. Görsel yükleme, metin yerleştirme ve buton çizimi işlemleri gerçekleştirilir.
+4. Görsel sonucu byte array olarak dönüştürülür ve API yanıtı olarak gönderilir.
+
+## API Özellikleri:
++ Endpoint: `/create-ad/`
++ Parametreler: `image`, `logo`, `color_hex`, `punchline`, `button_text`
++ Yanıt: Oluşturulan reklam görselinin PNG formatında byte array olarak dönüşü.
+
+## Sonuç:
+- 'main.py' dosyasını terminalde çalıştırdıktan sonra açılan URL ile istenilen denemeler yapılabilir.
+URL açıldıktan sonra gerçekleştirdiğim tüm adımlar, 'API_Photo-...' isimli fotoğraflar ile de gösterilmektedir.
+
+
+
+	# BONUS: Aynı anda birden fazla request alabilen ve paralel çalışabilen bir yapı kurma
+
+- "main.py" dosyası buna uygun şekilde tasarlanmıştır. Uygulamayı birden fazla thread veya process kullanarak çalıştırmak,
+paralel istek işleme kapasitesini artırır. Örneğin, 'uvicorn main:app --workers 4 --host 0.0.0.0 --port 8000' gibi bir komut,
+uygulamayı dört thread ile başlatır. Bu, uygulamanın aynı anda birden fazla isteği işleyebilmesini sağlar.
